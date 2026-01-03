@@ -36,43 +36,8 @@ HTML / CSS – Frontend
 
 Render – Cloud deployment
 
-🏗️ Project Architecture
-Resume (PDF)
-   ↓
-PDF Text Extraction
-   ↓
-Text Preprocessing (NLP)
-   ↓
-Sentence-BERT Embeddings
-   ↓
-Semantic Similarity (Cosine)
-   ↓
-Match Score + Skill Gap
-   ↓
-Job Recommendation Engine
 
-📁 Project Structure
-Smart-Resume-Skill-Gap-Analyzer/
-│
-├── app.py
-├── preprocess.py
-├── pdf_reader.py
-├── semantic_similarity.py
-├── semantic_skill_match.py
-├── job_recommender.py
-├── skill_gap.py
-├── skills_list.txt
-├── requirements.txt
-│
-├── jobs/
-│   └── jobs.json
-│
-├── templates/
-│   ├── index.html
-│   └── result.html
-│
-└── static/
-    └── style.css
+
 
 ▶️ How to Run Locally
 pip install -r requirements.txt
@@ -85,9 +50,9 @@ http://127.0.0.1:5000
 🌐 Live Demo
 
 🔗 Deployed on Render
-(Add your Render URL here once deployment finishes)
+(https://smart-resume-skill-gap-analyzer.onrender.com)
 
-📌 How It Works (Brief)
+📌 How It Works 
 
 Resume and job descriptions are converted into semantic embeddings using Sentence-BERT.
 
