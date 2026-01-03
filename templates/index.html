@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Resume Skill Gap Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Smart Resume Skill Gap Analyzer</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label>Upload Resume (PDF)</label>
+        <input type="file" name="resume_pdf" accept=".pdf" required>
+
+        <label>Job Description</label>
+        <textarea name="job" rows="8" required></textarea>
+
+        <button type="submit">Analyze Resume</button>
+    </form>
+</div>
+
+</body>
+</html>

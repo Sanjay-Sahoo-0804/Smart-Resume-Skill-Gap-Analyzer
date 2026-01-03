@@ -1,0 +1,10 @@
+python
+machine learning
+data analysis
+nlp
+deep learning
+sql
+flask
+django
+statistics
+git

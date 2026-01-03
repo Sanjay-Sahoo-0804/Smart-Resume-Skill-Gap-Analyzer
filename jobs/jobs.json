@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Machine Learning Engineer",
+    "description": "Looking for a machine learning engineer with Python, ML, NLP, and data analysis skills."
+  },
+  {
+    "id": 2,
+    "title": "Data Analyst",
+    "description": "Seeking a data analyst with strong SQL, Python, statistics, and data visualization experience."
+  },
+  {
+    "id": 3,
+    "title": "Python Developer",
+    "description": "Need a Python developer with Flask, Django, REST APIs, and Git experience."
+  },
+  {
+    "id": 4,
+    "title": "AI Engineer",
+    "description": "Hiring AI engineer with deep learning, NLP, PyTorch, and model deployment experience."
+  }
+]

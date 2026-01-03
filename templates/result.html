@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Resume Analysis Result</h1>
+
+    <h2>Overall Match Score</h2>
+    <div class="score">{{ score }}%</div>
+
+    <h2>Recommended Jobs</h2>
+
+<table border="1" width="100%" cellpadding="10">
+    <tr>
+        <th>Job Title</th>
+        <th>Match %</th>
+    </tr>
+
+    {% for job in jobs %}
+    <tr>
+        <td>{{ job.title }}</td>
+        <td>{{ job.score }}%</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+    <table border="1" width="100%" cellpadding="10">
+        <tr>
+            <th>Skill</th>
+            <th>Match %</th>
+        </tr>
+
+        {% for skill, percent in skill_scores.items() %}
+        <tr>
+            <td>{{ skill }}</td>
+            <td>{{ percent }}%</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Missing Skills</h3>
+    <ul class="missing">
+        {% for skill in missing %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Analyze Another Resume</a>
+</div>
+
+</body>
+</html>
