@@ -1,7 +1,5 @@
-from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-
-model = SentenceTransformer('all-MiniLM-L6-v2')
+from bert_model import model
 
 def semantic_skill_match(resume_text, skills):
     results = {}

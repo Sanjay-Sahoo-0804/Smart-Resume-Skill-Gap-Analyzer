@@ -1,8 +1,6 @@
 import json
-from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-
-model = SentenceTransformer("all-MiniLM-L6-v2")
+from bert_model import model
 
 def load_jobs(file_path="jobs/jobs.json"):
     with open(file_path, "r") as f:
@@ -10,7 +8,6 @@ def load_jobs(file_path="jobs/jobs.json"):
 
 def recommend_jobs(resume_text, top_n=3):
     jobs = load_jobs()
-
     resume_embedding = model.encode(resume_text)
 
     recommendations = []
@@ -27,11 +24,8 @@ def recommend_jobs(resume_text, top_n=3):
             "score": round(score * 100, 2)
         })
 
-    # Sort jobs by similarity score (descending)
-    recommendations = sorted(
+    return sorted(
         recommendations,
         key=lambda x: x["score"],
         reverse=True
-    )
-
-    return recommendations[:top_n]
+    )[:top_n]

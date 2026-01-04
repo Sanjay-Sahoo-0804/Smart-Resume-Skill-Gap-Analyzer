@@ -1,8 +1,5 @@
-from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-
-# Load model once (important)
-model = SentenceTransformer('all-MiniLM-L6-v2')
+from bert_model import model
 
 def semantic_similarity(text1, text2):
     embeddings = model.encode([text1, text2])
