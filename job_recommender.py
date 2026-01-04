@@ -1,24 +1,27 @@
 import json
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from bert_model import model
 
 def load_jobs(file_path="jobs/jobs.json"):
-    with open(file_path, "r") as f:
-        return json.load(f)
+    try:
+        with open(file_path, "r") as f:
+            return json.load(f)
+    except:
+        return []
 
 def recommend_jobs(resume_text, top_n=3):
     jobs = load_jobs()
-    resume_embedding = model.encode(resume_text)
+    if not jobs:
+        return []
+
+    documents = [resume_text] + [job["description"] for job in jobs]
+    vectorizer = TfidfVectorizer()
+    vectors = vectorizer.fit_transform(documents)
+
+    scores = cosine_similarity(vectors[0], vectors[1:])[0]
 
     recommendations = []
-
-    for job in jobs:
-        job_embedding = model.encode(job["description"])
-        score = cosine_similarity(
-            [resume_embedding],
-            [job_embedding]
-        )[0][0]
-
+    for job, score in zip(jobs, scores):
         recommendations.append({
             "title": job["title"],
             "score": round(score * 100, 2)

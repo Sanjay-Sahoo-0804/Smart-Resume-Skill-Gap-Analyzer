@@ -2,5 +2,4 @@ flask
 nltk
 scikit-learn
 PyPDF2
-sentence-transformers
 gunicorn
